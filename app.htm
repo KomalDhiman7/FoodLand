@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FoodLand</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+            }
+            h2{
+                color: orangered;
+                font-size: large;
+                font-style: italic;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+
+            .signup {
+                background-color: white;
+                padding: 20px;
+                margin: 20px auto;
+                width: 300px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .signup h1 {
+                color: maroon;
+                font-weight: bold;
+            }
+
+            .signup h2 {
+                color: maroon;
+                font-style: italic;
+                font-weight: bolder;
+                margin-bottom: 20px;
+            }
+
+            .signup label, .signup input {
+                display: block;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .signup input {
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+
+            .signup button {
+                padding: 10px 20px;
+                background-color: #ff5722;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                width: 100%;
+            }
+
+            .signup button:hover {
+                background-color: #e64a19;
+            }
+
+            .signup a {
+                color: #ff5722;
+                text-decoration: none;
+            }
+
+            .menu {
+                background-color: white;
+                padding: 20px;
+                margin: 20px auto;
+                width: 80%;
+                max-width: 800px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                text-align: left;
+            }
+
+            .menu h2 {
+                color: maroon;
+                font-style: italic;
+                margin-bottom: 20px;
+            }
+
+            .menu .item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 15px;
+                padding: 10px;
+                border-bottom: 1px solid #ccc;
+            }
+
+            .menu .item p {
+                margin: 5px 0;
+            }
+
+            .menu .item button {
+                padding: 8px 16px;
+                background-color: orangered;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-left: 10px;
+            }
+
+            .menu .item button:hover {
+                background-color: darkorange;
+            }
+
+            .order-summary {
+                background-color: white;
+                padding: 20px;
+                margin: 20px auto;
+                width: 300px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                text-align: left;
+            }
+
+            .order-summary h2 {
+                margin-bottom: 20px;
+                color: maroon;
+            }
+
+            .order-summary ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .order-summary ul li {
+                margin-bottom: 10px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .order-summary p {
+                font-weight: bold;
+            }
+
+            .pay-option {
+                margin-top: 20px;
+                text-align: center;
+            }
+
+            .pay-option button {
+                padding: 10px 20px;
+                background-color: green;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            .pay-option button:hover {
+                background-color: darkgreen;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Swaad Anokha, Apna Desi—Jahan Har Bite Mein Mehsoos Ho Pyar Aur Apnapan!!!</h2>
+        <section class="signup" id="signup-form">
+            <h1>Welcome To FoodLand</h1>
+            
+            <h3>Sign-up/Sign-in</h3>
+            <form id="login-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <p>Forgot Password? <a href="#">click here!</a></p>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <!-- Menu -->
+        <section class="menu" id="menu-section" style="display: none;">
+            <h2>Menu</h2>
+            <div class="item" data-name="Full Thali" data-price="200">
+                <p>Full Thali - includes 3 Roti, Rice, Dal Makhni, Jeera Aloo, Raita</p>
+                <span>₹200</span>
+                <button class="add-to-order">Add</button>
+            </div>
+
+            <div class="item" data-name="Veg Biryani" data-price="300">
+                <p>Veg Biryani - with some extra tadka</p>
+                <span>₹300</span>
+                <button class="add-to-order">Add</button>
+            </div>
+
+            <div class="item" data-name="Veg Platter" data-price="400">
+                <p>Veg Platter - includes Sweet Corn, Manchurian, Rolls</p>
+                <span>₹400</span>
+                <button class="add-to-order">Add</button>
+            </div>
+
+            <div class="item" data-name="Pizza" data-price="500">
+                <p>Pizza - 10 inches corn, capsicum, onion, paneer, olives</p>
+                <span>₹500</span>
+                <button class="add-to-order">Add</button>
+            </div>
+
+            <div class="item" data-name="Pasta" data-price="300">
+                <p>Pasta - Red sauce pasta</p>
+                <span>₹300</span>
+                <button class="add-to-order">Add</button>
+            </div>
+
+            <div class="item" data-name="Pasta" data-price="350">
+                <p>Pasta - White sauce pasta</p>
+                <span>₹350</span>
+                <button class="add-to-order">Add</button>
+            </div>
+
+            <div class="item" data-name="Burger" data-price="150">
+                <p>Burger - single cheese slice, aloo-tikki</p>
+                <span>₹150</span>
+                <button class="add-to-order">Add</button>
+            </div>
+        </section>
+
+        <section class="order-summary" id="order-summary" style="display: none;">
+            <h2>Your Order</h2>
+            <ul id="order-list"></ul>
+            <p>Total: ₹<span id="total-price">0</span></p>
+
+            <div class="pay-option">
+                <button id="pay-cash">Pay via Cash</button>
+            </div>
+        </section>
+
+        <script>
+            const orderList = document.getElementById('order-list');
+            const totalPriceElement = document.getElementById('total-price');
+            let totalPrice = 0;
+
+            // Handle login form submission
+            document.getElementById('login-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                alert('Login successful! Redirecting to the menu...');
+                document.getElementById('signup-form').style.display = 'none';
+                document.getElementById('menu-section').style.display = 'block';
+            });
+
+            // Add items to the order
+            document.querySelectorAll('.add-to-order').forEach(button => {
+                button.addEventListener('click', () => {
+                    const menuItem = button.closest('.item');
+                    const itemName = menuItem.dataset.name;
+                    const itemPrice = parseFloat(menuItem.dataset.price);
+
+                    // Create list item
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${itemName} - ₹${itemPrice}`;
+                    
+                    // Add remove button
+                    const removeButton = document.createElement('button');
+                    removeButton.textContent = 'Remove';
+                    removeButton.style.backgroundColor = 'red';
+                    removeButton.style.color = 'white';
+                    removeButton.style.border = 'none';
+                    removeButton.style.borderRadius = '5px';
+                    removeButton.style.cursor = 'pointer';
+                    removeButton.style.marginLeft = '10px';
+
+                    // Remove item from order
+                    removeButton.addEventListener('click', () => {
+                        listItem.remove();
+                        totalPrice -= itemPrice;
+                        totalPriceElement.textContent = totalPrice;
+                        if (totalPrice === 0) {
+                            document.getElementById('order-summary').style.display = 'none';
+                        }
+                    });
+
+                    listItem.appendChild(removeButton);
+                    orderList.appendChild(listItem);
+
+                    // Update total price
+                    totalPrice += itemPrice;
+                    totalPriceElement.textContent = totalPrice;
+
+                    // Show order summary section
+                    document.getElementById('order-summary').style.display = 'block';
+                });
+            });
+
+            // Handle cash payment
+            document.getElementById('pay-cash').addEventListener('click', () => {
+                alert('You have selected to pay via cash. Thank you for your order!');
+            });
+        </script>
+    </body>
+</html>
